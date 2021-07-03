@@ -4,7 +4,7 @@
   "description": "",
   "main": "lotin.js",
   "scripts": {
-    "test": "node lotin.js",
+    "start": "node lotin.js",
     "dev":"nodemon lotin.js"
   },
   "keywords": [],
