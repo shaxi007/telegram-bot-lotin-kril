@@ -7,6 +7,9 @@
     "start": "node lotin.js",
     "dev":"nodemon lotin.js"
   },
+  "engines": {
+    "node": "16.4.0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
