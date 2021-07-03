@@ -1,0 +1,1 @@
+web: node lotin.js
