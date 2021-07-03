@@ -1,0 +1,17 @@
+{
+  "name": "lotin-kril-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lotin.js",
+  "scripts": {
+    "test": "node lotin.js",
+    "dev":"nodemon lotin.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.53.0",
+    "nodemon": "^2.0.9"
+  }
+}
