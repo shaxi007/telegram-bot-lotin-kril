@@ -3,6 +3,46 @@ const api = '1602137163:AAFkgqtJAh_-mTBWCWlG_RdYonHE2NLEggA'
 const bot = new TelegramApi(api, { polling: true })
 let op=''
 
+
+const objkril = {
+    ' ': ' ',
+    'а': 'a', 'А': 'A',
+    'б': 'b', 'Б': 'B',
+    'в': 'v', 'В': 'V',
+    'г': 'g', 'Г': 'G',
+    'д': 'd', 'Д': 'D',
+    'е': 'e', 'Е': 'E',
+    'ё': 'yo', 'Ё': 'Yo',
+    'ж': 'j', 'Ж': 'J',
+    'з': 'z', 'З': 'Z',
+    'и': 'i', 'И': 'I',
+    'й': 'y', 'Й': 'Y',
+    'к': 'k', 'К': 'K',
+    'л': 'l', 'Л': 'L',
+    'м': 'm', 'М': 'M',
+    'н': 'n', 'Н': 'N',
+    'о': 'o', 'О': 'O',
+    'п': 'p', 'П': 'P',
+    'р': 'r', 'Р': 'R',
+    'с': 's', 'С': 'S',
+    'т': 't', 'Т': 'T',
+    'у': 'u', 'У': 'U',
+    'ф': 'f', 'Ф': 'F',
+    'х': 'x', 'Х': 'X',
+    'ц': 's', 'Ц': 'S',
+    'ч': 'ch', 'Ч': 'Ch',
+    'ш': 'sh', 'Ш': 'Sh',
+    'ъ': 'ʼ', 'Ъ': 'ʼ',
+    'ь': '', 'Ь': '',
+    'э': 'e', 'Э': 'E',
+    'ю': 'yu', 'Ю': 'Yu',
+    'я': 'ya', 'Я': 'Ya',
+    'ў': 'oʻ', 'Ў': 'Oʻ',
+    'қ': 'q', 'Қ': 'Q',
+    'ғ': 'gʻ', 'Ғ': 'Gʻ',
+    'ҳ': 'h', 'Ҳ': 'H',
+  }
+
 const objlotin = {
     ' ': ' ',
     'a': 'а', 'A': 'А',
@@ -46,10 +86,6 @@ const objlotin = {
   }
 
   
-  const krilH={
-	а:'a',б:'b',в:'v',г:'g',д:'d',е:'e',ё:'yo',ж:'j',з:'z',и:'i',й:'y',к:'k',л:'l',м:'m',н:'n',о:'o',п:'p',р:'r',т:'t',у:'u',ф:'f',х:'x',ц:'ts',ч:'ch',с:'s',ш:'sh','ъ':'`',э:'e',ю:'yu',я:'ya','ў':'o\'',қ:'q',ғ:"g'",ҳ:'h'
-}
-  
   function krilgaOgir(text){
     let str = ''
    for(let i = 0; i < text.length; i++){
@@ -68,22 +104,12 @@ const objlotin = {
 }
 
 function lotingaOgir(text){
-    let sum=''
-	for(let i=0;i<text.length;++i){
-		if(typeof +text[i]!=='number'&& text[i]==text[i].toUpperCase()  ){ 
-			sum+= krilH[text[i].toLowerCase()][0].toUpperCase()
-			if(krilH[text[i].toLowerCase()][1]){
-                 sum+=krilH[text[i].toLowerCase()][1]
-            }
-		}
-        else if(krilH[text[i]])[
-            sum+=krilH[text[i]] 
-        ]
-		else{ 
-           sum+=text[i]
-        }
-	}
-	return sum
+    let str = ''
+  for(let key of text){
+      if(objkril[key]==undefined) str+=key
+      else str += objkril[key]
+  }
+  return str
 }
 
 const options={
@@ -102,11 +128,11 @@ const start=()=>{
     if(op=='kril') {
         bot.sendMessage(chatId,lotingaOgir(text) )
     }
-    if(op=='lotin') {
+    else if(op=='lotin') {
         bot.sendMessage(chatId,krilgaOgir(text))
     } 
     else {
-        bot.sendMessage(chatId,'Iltimos tugmalardan birini tanlab matn yuboring !')
+        return bot.sendMessage(chatId,'Iltimos tugmalardan birini tanlab matn yuboring !')
     }
     })
 
