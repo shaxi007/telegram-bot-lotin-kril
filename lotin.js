@@ -143,12 +143,10 @@ const start=()=>{
             op='kril'
             bot.sendMessage(chatId,'Menga *Krill* matn yuboring ')
         }
-        else op='lotin'
         if(data=='lotin'){
             op='lotin'
             bot.sendMessage(chatId,'Menga *Lotin* matn yuboring ')
         }
-        else op='kril'
     })
 } 
 start()
