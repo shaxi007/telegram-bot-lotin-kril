@@ -98,7 +98,7 @@ const start=()=>{
     bot.on('message', msg=>{
     const text=msg.text
     const chatId=msg.chat.id
-    if(text=='/start') return bot.sendMessage(chatId,`Assalom alaykum ${msg.from.first_name}.\n Patdagi tugmalardan birini tanlang 👇 `,options)
+    if(text=='/start') return bot.sendMessage(chatId,`Assalom alaykum ${msg.from.first_name}.\n Pastdagi tugmalardan birini tanlang 👇 `,options)
     if(op=='kril') {
         bot.sendMessage(chatId,lotingaOgir(text) )
     }
